@@ -631,7 +631,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         else {
             Node<K,V> e; K k;
             if (p.hash == hash &&                                      //先判断hash索引是否相同
-                ((k = p.key) == key || (key != null && key.equals(k))))//&& 再判断key值是否相等，有些情况可能equals方法被重写了 液压哦判断
+                ((k = p.key) == key || (key != null && key.equals(k))))//&& 再判断key值是否相等，有些情况可能equals方法被重写了 也要判断
                 e = p;
             else if (p instanceof TreeNode)//如果是树形结构
                 e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);

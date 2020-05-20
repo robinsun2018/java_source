@@ -1,20 +1,20 @@
 package test.test_condition;
 
-public class DrawThread implements Runnable{
+public class WithdrawThread implements Runnable{
 
     private Account account;
 
     private float drawAmount;//每次取钱数
 
 
-    public DrawThread(Account account, float drawAmount) {
+    public WithdrawThread(Account account, float drawAmount) {
         this.account = account;
         this.drawAmount = drawAmount;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
              account.withdraw(drawAmount);
              try {
                  Thread.sleep(100);

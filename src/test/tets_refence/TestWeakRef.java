@@ -1,19 +1,16 @@
 package test.tets_refence;
 
-import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 
 public class TestWeakRef {
     public static void main(String[] args) {
         /**
-         * java中使用SoftRefence来表示软引用，如果某个对象与软引用关联，那么JVM只会在内存不足的情况下回收该对象。
-         *
-         * 那么利用这个特性，软引用可以用来做缓存。
+         *如果某个对象与弱引用关联，那么当JVM在进行垃圾回收时，无论内存是否充足，都会回收此类对象。
          */
-        SoftReference<String> ref = new SoftReference<String>("test");
-        String s = ref.get();
-        System.out.println(s);
+        WeakReference<String> ref = new WeakReference<String>(new String("ser"));
+        System.out.println(ref.get());
         System.gc();
-        System.out.println(s);
+        System.out.println(ref.get());
 
     }
 }

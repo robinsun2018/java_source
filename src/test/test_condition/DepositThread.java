@@ -4,18 +4,18 @@ public class DepositThread implements Runnable{
 
     private Account account;
 
-    private float drawAmount;//每次取钱数
+    private float depositAmount;//每次存钱数
 
 
-    public DepositThread(Account account, float drawAmount) {
+    public DepositThread(Account account, float depositAmount) {
         this.account = account;
-        this.drawAmount = drawAmount;
+        this.depositAmount = depositAmount;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < 3; i++) {
-             account.withdraw(drawAmount);
+        for (int i = 0; i < 5; i++) {
+             account.deposit(depositAmount);
              try {
                  Thread.sleep(100);
                  } catch (InterruptedException e) {

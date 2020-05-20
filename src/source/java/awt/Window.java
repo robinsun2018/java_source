@@ -24,42 +24,31 @@
  */
 package java.awt;
 
-import java.awt.event.*;
-import java.awt.geom.Path2D;
-import java.awt.geom.Point2D;
-import java.awt.im.InputContext;
-import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.awt.peer.ComponentPeer;
-import java.awt.peer.WindowPeer;
-import java.beans.PropertyChangeListener;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OptionalDataException;
-import java.io.Serializable;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.InvocationTargetException;
-import java.security.AccessController;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.EventListener;
-import java.util.Locale;
-import java.util.ResourceBundle;
-import java.util.Set;
-import java.util.Vector;
-import java.util.concurrent.atomic.AtomicBoolean;
-import javax.accessibility.*;
 import sun.awt.AWTAccessor;
 import sun.awt.AppContext;
 import sun.awt.CausedFocusEvent;
 import sun.awt.SunToolkit;
 import sun.awt.util.IdentityArrayList;
-import sun.java2d.Disposer;
 import sun.java2d.pipe.Region;
 import sun.security.action.GetPropertyAction;
 import sun.security.util.SecurityConstants;
 import sun.util.logging.PlatformLogger;
+
+import javax.accessibility.*;
+import java.awt.event.*;
+import java.awt.geom.Path2D;
+import java.awt.geom.Point2D;
+import java.awt.im.InputContext;
+import java.awt.image.BufferStrategy;
+import java.awt.peer.ComponentPeer;
+import java.awt.peer.WindowPeer;
+import java.beans.PropertyChangeListener;
+import java.io.*;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.InvocationTargetException;
+import java.security.AccessController;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * A {@code Window} object is a top-level window with no borders and no
