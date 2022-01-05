@@ -12,7 +12,6 @@ public class TestThreadPool {
                 new ArrayBlockingQueue<Runnable>(5),
                 Executors.defaultThreadFactory()
         );
-
         for (int i = 0; i < 10; i++) {
             threadPoolExecutor.execute(() ->{
                 System.out.println("执行当前任务的线程为："+Thread.currentThread().getName());
